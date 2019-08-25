@@ -1,0 +1,8 @@
+<div class="col-md-3 form-group">
+    <select class="form-control" ([ngModel])="idTipoDocumento">
+        <option *ngFor="let order of tiposDocumentos; let i = index" [value]="order.value">
+            {{order.TipoDocumento}}
+          </option>
+    </select>
+    <input class="form-control" type="text" ([ngModel])="identificacion" placeholder="digite identificación">
+</div>
