@@ -1,8 +1,24 @@
-<div class="col-md-3 form-group">
-    <select class="form-control" ([ngModel])="idTipoDocumento">
-        <option *ngFor="let order of tiposDocumentos; let i = index" [value]="order.value">
-            {{order.TipoDocumento}}
-          </option>
-    </select>
-    <input class="form-control" type="text" ([ngModel])="identificacion" placeholder="digite identificación">
+<div class="row margen-superior padding-componente">
+    <div class="col-md-2 form-group">
+        <select class="form-control" ([ngModel])="idTipoDocumento">
+            <option *ngFor="let order of tiposDocumentos; let i = index" [value]="order.value">
+                {{order.TipoDocumento}}
+              </option>
+        </select>
+    </div>
+    <div class="col-md-2 form-group">
+        <input class="form-control" type="text" ([ngModel])="identificacion" placeholder="identificación">
+    </div>
+    <div class="col-md-2 form-group">
+        <input class="form-control" type="text" ([ngModel])="primerNombre" placeholder="primer nombre">
+    </div>
+    <div class="col-md-2 form-group">
+       <input class="form-control" type="text" ([ngModel])="segundoNombre" placeholder="segundo nombre">
+    </div>
+    <div class="col-md-2 form-group">
+       <input class="form-control" type="text" ([ngModel])="primerApellido" placeholder="primer apellido">
+    </div>
+    <div class="col-md-2 form-group">
+       <input class="form-control" type="text" ([ngModel])="segundoApellido" placeholder="segundo apellido">
+    </div>
 </div>

@@ -10,7 +10,8 @@ export class VotantesComponent implements OnInit {
   tiposDocumentos: any[] = [{value: 1, TipoDocumento: 'Cédula de Ciudadanía'},
                           {value: 2, TipoDocumento: 'Cédula de Extranjería'}];
   idTipoDocumento = 1;
-  identificacion: string;
+  identificacion: string; primerNombre: string; segundoNombre: string;
+  primerApellido: string; segundoApellido: string;
   constructor() { }
 
   ngOnInit() {
