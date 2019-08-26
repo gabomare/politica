@@ -1,5 +1,23 @@
 <div class="row margen-superior padding-componente">
+    
+    <div class="col-md-2">
+       <img class="fotoCandidato" src="{{foto}}" />
+    </div>
+    <div class="col-md-10">
+       <h1>Candidato </h1>
+       <select [disabled]="!multiplesCandidato" class="form-control" ([ngModel])="idCandidato">
+          <option *ngFor="let candidato of candidatos; let i = index" [value]="candidato.idCandidato">
+             {{candidato.PrimerNombre+' '+ candidato.SegundoNombre+' '+
+               candidato.PrimerApellido+' '+candidato.SegundoApellido}}
+          </option>
+       </select>
+    </div>
+    <div class="col-md-12">
+        <h5>Datos del sufragante</h5><br>
+        <h6>Datos Básicos y de Contacto</h6>
+    </div>
     <div class="col-md-2 form-group">
+        <label for="">Tipo de Documento</label>
         <select class="form-control" ([ngModel])="idTipoDocumento">
             <option *ngFor="let order of tiposDocumentos; let i = index" [value]="order.value">
                 {{order.TipoDocumento}}
@@ -7,18 +25,70 @@
         </select>
     </div>
     <div class="col-md-2 form-group">
+        <label for="">Número de Documento</label>
         <input class="form-control" type="text" ([ngModel])="identificacion" placeholder="identificación">
     </div>
     <div class="col-md-2 form-group">
+        <label for="">Primer Nombre</label>
         <input class="form-control" type="text" ([ngModel])="primerNombre" placeholder="primer nombre">
     </div>
     <div class="col-md-2 form-group">
+       <label for="">Segundo Nombre</label>        
        <input class="form-control" type="text" ([ngModel])="segundoNombre" placeholder="segundo nombre">
     </div>
     <div class="col-md-2 form-group">
+       <label for="">Primer Apellido</label>        
        <input class="form-control" type="text" ([ngModel])="primerApellido" placeholder="primer apellido">
     </div>
     <div class="col-md-2 form-group">
+       <label for="">Segundo Apellido</label>                
        <input class="form-control" type="text" ([ngModel])="segundoApellido" placeholder="segundo apellido">
     </div>
+    <div class="col-md-2 form-group">
+       <label for="">Fecha de Nacimiento</label>                
+       <input class="form-control" type="date" ([ngModel])="fechaNacimiento" placeholder="fecha de nacimiento">
+    </div>
+    <div class="col-md-4 form-group">
+       <label for="">Dirección</label>                
+       <input class="form-control" type="text" ([ngModel])="direccion" placeholder="dirección">
+    </div>
+    <div class="col-md-2">
+       <label for="">Barrio</label>
+       <select class="form-control" ([ngModel])="idBarrio">
+          <option *ngFor="let barrio of barrios; let i = index" [value]="barrio.idBarrio">
+                  {{barrio.Barrio}}
+          </option>
+       </select>
+    </div>
+    <div class="col-md-2 form-group">
+       <label for="">Celular</label>        
+       <input class="form-control" type="text" ([ngModel])="celular" placeholder="celular">
+    </div>
+    <div class="col-md-2 form-group">
+       <label for="">Correo</label>        
+       <input class="form-control" type="text" ([ngModel])="correo" placeholder="correo electrónico">
+    </div>
+    <div class="col-md-12">
+       <h6>Datos para sufragio</h6>
+    </div>
+    <div class="col-md-4 form-group">
+       <label for="">Lugar de Votación</label>
+       <input class="form-control" type="text" ([ngModel])="lugarVotacion" placeholder="lugar de votación">
+    </div>
+    <div class="col-md-2 form-group">
+       <label for="">Número de Mesa</label>        
+       <input class="form-control" type="text" ([ngModel])="noMesa" placeholder="número de mesa para votación">
+    </div>
+    <div class="col-md-2">
+       <label for="">Lider a Cargo</label>
+       <select class="form-control" ([ngModel])="idLider">
+          <option *ngFor="let lider of lideres; let i = index" [value]="lider.idLider">
+             {{lider.nombreLider}}
+          </option>
+       </select>
+    </div>    
+    <div class="col-md-2 form-group">
+       <label for="">¿Inscrito en {{nombreMunicipio}}?</label>        
+       <input class="form-control" type="checkbox" ([ngModel])="inscritoEnEsteMunicipio">
+    </div>    
 </div>
