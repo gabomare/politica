@@ -32,6 +32,7 @@ export class VotantesComponent implements OnInit {
   constructor(private http: HttpClient, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+      this.enviarMensaje();
       this.env = environment;
       this.idCandidato = this.env.candidatoPorDefecto;
       this.nombreMunicipio = this.env.nombreMunicipio;
@@ -254,5 +255,20 @@ export class VotantesComponent implements OnInit {
       error = { ...error, error: 'seleccione una opción' };
     }
     return error;
+  }
+  public enviarMensaje(){
+    // URL for request POST /message
+    // https://eu46.chat-api.com/instance62341/ and token snzmbiyavk80ghk4
+    // $url = 'https://eu12.chat-api.com/instance6927/message?token=haalv4iox2vsybnb';
+      debugger;
+      const url = 'https://eu46.chat-api.com/instance62341/message?token=snzmbiyavk80ghk4';
+      const data = {
+          phone: '573104567541', // Receivers phone
+          body: 'Hello, Prueba de envío masiva a SANDRA Y GABRIEL!', // Message
+      };
+      // Send a request
+      this.http.post(url, data).subscribe((data) => {
+          debugger;
+      });
   }
 }
