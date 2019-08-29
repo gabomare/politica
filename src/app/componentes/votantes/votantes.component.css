@@ -1,5 +1,5 @@
 .margen-superior{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .padding-componente{
     padding: 0 20px 20px 20px;
@@ -7,5 +7,26 @@
 .fotoCandidato{
     width: 150px;
     height: 150px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+}
+.float-right{
+    float: right;
+}
+.datos-votacion{
+    color: rgb(76, 38, 180);
+    font-weight: bold;
+}
+.datos-contacto{
+    color: rgb(89, 188, 71);
+    font-weight: bold;
+}
+.datos-basicos{
+    color:black;
+    font-weight: bold;
+}
+.borde-rojo{
+    border: 1px solid red;
+}
+.texto-rojo{
+    color: red;
 }

@@ -4,7 +4,7 @@ import { VotantesComponent } from './componentes/votantes/votantes.component';
 
 const ROUTES: Routes = [
   {path: 'votantes', component: VotantesComponent},
-  {path: '**', redirectTo: 'home'}
+  {path: '**', redirectTo: 'votantes'}
 ];
 
 @NgModule({
