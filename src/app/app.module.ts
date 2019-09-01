@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { VotantesComponent } from './componentes/votantes/votantes.component';
 import {HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
+import { SesionComponent } from './componentes/sesion/sesion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VotantesComponent
+    VotantesComponent,
+    SesionComponent
   ],
   imports: [
     BrowserModule,

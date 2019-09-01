@@ -19,17 +19,18 @@ export class VotantesComponent implements OnInit {
   identificacion: string; primerNombre: string; segundoNombre: string;
   primerApellido: string; segundoApellido: string;
   fechaNacimiento: string; direccion: string; idCorregimiento: number; idBarrio: number; celular: string;
-  correo: string; lugarVotacion: number; noMesaa: number = -1; idLider: number;
+  correo: string; lugarVotacion: number; noMesa = -1; idLider: number;
   idCandidato: number;
   multiplesCandidatos: boolean; inscritoEnEsteMunicipio = true;
   foto = ''; nombreMunicipio: string;
   candidatos: any = []; barrios: any; lideres: any; corregimientos: any; lugaresVotacion: any;
   mesas: any;
   env: any; habilitado = 'disabled'; deCorregimiento = 1;
-
+  public contexto = this;
   public formGroup: FormGroup;
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) { }
+  constructor(private http: HttpClient, private formBuilder: FormBuilder) {
+   }
 
   ngOnInit() {
       this.enviarMensaje();
@@ -187,7 +188,7 @@ export class VotantesComponent implements OnInit {
     });
   }
 
-  private construirForm(idCandidato: number){
+  private construirForm(idCandidato: number) {
      try {
          this.formGroup = this.formBuilder.group({
           idCandidato: [this.idCandidato, [Validators.required]],
@@ -209,6 +210,11 @@ export class VotantesComponent implements OnInit {
           deCorregimiento: [this.deCorregimiento, [Validators.required]],
           idCorregimiento: [-1]
          });
+
+         this.formGroup.controls.identificacion.valueChanges.subscribe(data => {
+         });
+
+
      } catch (error) {
          alert(error);
      }
@@ -256,19 +262,19 @@ export class VotantesComponent implements OnInit {
     }
     return error;
   }
-  public enviarMensaje(){
+  public enviarMensaje() {
     // URL for request POST /message
     // https://eu46.chat-api.com/instance62341/ and token snzmbiyavk80ghk4
     // $url = 'https://eu12.chat-api.com/instance6927/message?token=haalv4iox2vsybnb';
-      debugger;
-      const url = 'https://eu46.chat-api.com/instance62341/message?token=snzmbiyavk80ghk4';
-      const data = {
-          phone: '573104567541', // Receivers phone
-          body: 'Hello, Prueba de envío masiva a SANDRA Y GABRIEL!', // Message
-      };
-      // Send a request
-      this.http.post(url, data).subscribe((data) => {
-          debugger;
-      });
+      // debugger;
+      // const url = 'https://eu46.chat-api.com/instance62341/message?token=snzmbiyavk80ghk4';
+      // const data = {
+      //     phone: '573104567541', // Receivers phone
+      //     body: 'Hello, Prueba de envío masiva a SANDRA Y GABRIEL!', // Message
+      // };
+      // // Send a request
+      // this.http.post(url, data).subscribe((data) => {
+      //     debugger;
+      // });
   }
 }
